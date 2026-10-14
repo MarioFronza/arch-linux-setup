@@ -9,6 +9,9 @@ if ! grep -q '^\[multilib\]' /etc/pacman.conf; then
   sudo sed -i '/^#\[multilib\]/,/^#Include = \/etc\/pacman.d\/mirrorlist/ s/^#//' /etc/pacman.conf
 fi
 
+echo "==> Raising pacman parallel downloads"
+sudo sed -i 's/^#\?ParallelDownloads.*/ParallelDownloads = 10/' /etc/pacman.conf
+
 echo "==> Updating package databases"
 sudo pacman -Sy
 
