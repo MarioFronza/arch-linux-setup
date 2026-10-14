@@ -292,7 +292,7 @@ how to install them.
 | Package | Description |
 | --- | --- |
 | `claude-code` | An agentic coding tool that lives in your terminal |
-| `rtk` | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands |
+| `rtk-bin` | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands |
 
 ### TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt)
 

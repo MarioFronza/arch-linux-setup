@@ -3,7 +3,7 @@
 
 # --- Dev tools ---
 claude-code
-rtk
+rtk-bin
 
 # --- TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt) ---
 # wiremix-git: only a -git (VCS) package exists in the AUR, so it compiles
