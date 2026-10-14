@@ -130,7 +130,7 @@ how to install them.
 | `noto-fonts` | Google Noto TTF fonts |
 | `noto-fonts-cjk` | Google Noto CJK fonts |
 | `noto-fonts-emoji` | Google Noto Color Emoji font |
-| `ttf-jetbrains-mono-nerd` | Patched font JetBrains Mono from nerd fonts library |
+| `ttf-adwaitamono-nerd` | Patched font Adwaita Mono from nerd fonts library |
 | `adwaita-fonts` | The typefaces for GNOME |
 | `woff2-font-awesome` | Iconic font designed for Bootstrap - woff2 format |
 | `gnome-themes-extra` | Extra GNOME themes (legacy HighContrast icon theme and index files for Adwaita) |
