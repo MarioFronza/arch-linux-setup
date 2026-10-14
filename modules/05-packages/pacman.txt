@@ -85,6 +85,7 @@ polkit-gnome
 mako
 swayosd
 fuzzel
+xdg-terminal-exec
 cliphist
 wl-clipboard
 wtype
@@ -148,7 +149,7 @@ mariadb-libs
 postgresql-libs
 mise
 
-# ruby/dotnet/rust aren't listed here — mise manages them (see ../mise/).
+# ruby/rust aren't listed here — mise manages them (see ../mise/).
 
 # --- File manager ---
 nautilus

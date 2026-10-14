@@ -112,6 +112,7 @@ how to install them.
 | `mako` | Lightweight notification daemon for Wayland |
 | `swayosd` | GTK based on-screen display for volume, brightness, and lock keys |
 | `fuzzel` | Application launcher for wlroots based Wayland compositors |
+| `xdg-terminal-exec` | Proposed standard to launching desktop apps with Terminal=true |
 | `cliphist` | wayland clipboard manager |
 | `wl-clipboard` | Command-line copy/paste utilities for Wayland |
 | `wtype` | xdotool type for wayland |
@@ -315,7 +316,6 @@ how to install them.
 
 | Package | Description |
 | --- | --- |
-| `xdg-terminal-exec` | Proposed standard to launching desktop apps with Terminal=true |
 | `cliamp-bin` | A retro terminal music player inspired by Winamp 2.x |
 | `tensaku-bin` | Modern screenshot annotation tool for Wayland |
 | `ttf-ia-writer` | Subset of the fonts provided by iA Writer |

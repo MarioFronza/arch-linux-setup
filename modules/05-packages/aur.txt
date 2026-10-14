@@ -16,7 +16,6 @@ limine-mkinitcpio-hook
 limine-snapper-sync
 
 # --- Misc tools ---
-xdg-terminal-exec
 cliamp-bin
 tensaku-bin
 ttf-ia-writer
