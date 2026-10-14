@@ -26,8 +26,8 @@ for vendor in "${!gpu_files[@]}"; do
   fi
 done
 
-echo "==> Disabling debug packages for AUR builds"
-sudo cp no-debug.conf /etc/makepkg.conf.d/
+echo "==> Configuring makepkg for AUR builds"
+sudo cp aur-builds.conf /etc/makepkg.conf.d/
 
 if ! command -v yay &>/dev/null; then
   echo "==> Bootstrapping yay"
