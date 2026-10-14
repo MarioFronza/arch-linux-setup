@@ -51,7 +51,7 @@ for pkg in */; do
     | sed -n 's/.* over existing target \(.*\) since .*/\1/p' \
     | while read -r file; do mkdir -p "$backup/$(dirname "$file")"; mv ~/"$file" "$backup/$file"; done
 done
-source ~/.local/share/arch-linux-setup/install.sh
+bash ~/.local/share/arch-linux-setup/install.sh
 ```
 
 Diff anything you changed locally against `$backup` afterwards and commit

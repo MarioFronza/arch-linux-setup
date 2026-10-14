@@ -2,7 +2,7 @@
 set -e
 
 # Give people a chance to retry running the installation
-trap 'echo "arch-linux-setup installation failed! You can retry by running: source ~/.local/share/arch-linux-setup/install.sh"' ERR
+trap 'echo "arch-linux-setup installation failed! You can retry by running: bash ~/.local/share/arch-linux-setup/install.sh"' ERR
 
 # The run spans 30-90 minutes because mise builds several toolchains from
 # source, so the initial sudo timestamp expires long before the end. Refresh it
