@@ -10,7 +10,6 @@ rtk-bin
 1password-cli
 spotify
 nordvpn-bin
-localsend-bin
 
 # --- Bootloader (Limine + Snapper integration) ---
 limine-mkinitcpio-hook

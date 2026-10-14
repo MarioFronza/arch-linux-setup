@@ -303,7 +303,6 @@ how to install them.
 | `1password-cli` | 1Password command line tool |
 | `spotify` | A proprietary music streaming service |
 | `nordvpn-bin` | NordVPN CLI tool for Linux |
-| `localsend-bin` | An open source cross-platform alternative to AirDrop |
 
 ### Bootloader (Limine + Snapper integration)
 
