@@ -146,8 +146,6 @@ libyaml
 mariadb-libs
 postgresql-libs
 mise
-re2c # needed to build php from source via mise
-gd   # needed to build php from source via mise (--with-gd)
 
 # ruby/dotnet aren't listed here — mise manages them (see ../mise/). rust is
 # an exception: wiremix-git (aur.txt) needs cargo to build, and install.sh

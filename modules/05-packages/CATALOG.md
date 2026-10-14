@@ -182,8 +182,6 @@ how to install them.
 | `mariadb-libs` | MariaDB libraries |
 | `postgresql-libs` | Sophisticated object-relational DBMS - Client binaries and libraries |
 | `mise` | The front-end to your dev env |
-| `re2c` | A tool for generating C-based recognizers from regular expressions |
-| `gd` | Library for the dynamic creation of images by programmers |
 | `rust` | Systems programming language focused on safety, speed and concurrency |
 
 ### File manager
