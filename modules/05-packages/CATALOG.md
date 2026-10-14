@@ -81,6 +81,7 @@ how to install them.
 | `libpulse` | A featureful, general-purpose sound server (client library) |
 | `sof-firmware` | Sound Open Firmware |
 | `pamixer` | Pulseaudio command-line mixer like amixer |
+| `wiremix` | A simple TUI audio mixer for PipeWire |
 
 ### Graphics (vendor-agnostic base; see gpu-*.txt for the driver)
 
@@ -182,7 +183,6 @@ how to install them.
 | `mariadb-libs` | MariaDB libraries |
 | `postgresql-libs` | Sophisticated object-relational DBMS - Client binaries and libraries |
 | `mise` | The front-end to your dev env |
-| `rust` | Systems programming language focused on safety, speed and concurrency |
 
 ### File manager
 
@@ -294,11 +294,6 @@ how to install them.
 | `claude-code` | An agentic coding tool that lives in your terminal |
 | `rtk-bin` | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands |
 
-### TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt)
-
-| Package | Description |
-|---|---|
-| `wiremix-git` | A simple TUI audio mixer for PipeWire |
 
 ### Apps
 
@@ -308,7 +303,7 @@ how to install them.
 | `1password-cli` | 1Password command line tool |
 | `spotify` | A proprietary music streaming service |
 | `nordvpn-bin` | NordVPN CLI tool for Linux |
-| `localsend` | An open source cross-platform alternative to AirDrop |
+| `localsend-bin` | An open source cross-platform alternative to AirDrop |
 
 ### Bootloader (Limine + Snapper integration)
 
@@ -322,8 +317,8 @@ how to install them.
 | Package | Description |
 | --- | --- |
 | `xdg-terminal-exec` | Proposed standard to launching desktop apps with Terminal=true |
-| `cliamp` | A retro terminal music player inspired by Winamp 2.x |
-| `tensaku` | Modern screenshot annotation tool for Wayland |
+| `cliamp-bin` | A retro terminal music player inspired by Winamp 2.x |
+| `tensaku-bin` | Modern screenshot annotation tool for Wayland |
 | `ttf-ia-writer` | Subset of the fonts provided by iA Writer |
 | `ufw-docker` | To fix the Docker and UFW security flaw without disabling iptables. |
 | `tzupdate` | Set the system timezone based on IP geolocation |
@@ -333,7 +328,7 @@ how to install them.
 
 | Package | Description |
 | --- | --- |
-| `android-apktool` | A tool for reengineering Android apk files |
+| `android-apktool-bin` | A tool for reengineering Android apk files |
 | `android-sdk-build-tools-36` | Build-Tools for Google Android SDK (aapt, aidl, dexdump, dx, llvm-rs-cc) |
 
 ### Security / reverse engineering

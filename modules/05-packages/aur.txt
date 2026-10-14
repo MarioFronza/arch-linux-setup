@@ -5,17 +5,12 @@
 claude-code
 rtk-bin
 
-# --- TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt) ---
-# wiremix-git: only a -git (VCS) package exists in the AUR, so it compiles
-# from source at install time — needs `rust` from pacman.txt on PATH.
-wiremix-git
-
 # --- Apps ---
 1password
 1password-cli
 spotify
 nordvpn-bin
-localsend
+localsend-bin
 
 # --- Bootloader (Limine + Snapper integration) ---
 limine-mkinitcpio-hook
@@ -23,15 +18,15 @@ limine-snapper-sync
 
 # --- Misc tools ---
 xdg-terminal-exec
-cliamp
-tensaku
+cliamp-bin
+tensaku-bin
 ttf-ia-writer
 ufw-docker
 tzupdate
 yaru-icon-theme
 
 # --- Android / mobile RE ---
-android-apktool
+android-apktool-bin
 android-sdk-build-tools-36
 
 # --- Security / reverse engineering ---

@@ -59,6 +59,7 @@ gst-plugin-pipewire
 alsa-utils
 libpulse
 pamixer
+wiremix
 sof-firmware # Intel SOF DSP audio, silent without it on most modern laptops
 
 # --- Graphics (vendor-agnostic base; see gpu-*.txt for the driver) ---
@@ -147,10 +148,7 @@ mariadb-libs
 postgresql-libs
 mise
 
-# ruby/dotnet aren't listed here — mise manages them (see ../mise/). rust is
-# an exception: wiremix-git (aur.txt) needs cargo to build, and install.sh
-# runs AUR installs with /usr/bin first on PATH, ahead of mise's rust.
-rust
+# ruby/dotnet/rust aren't listed here — mise manages them (see ../mise/).
 
 # --- File manager ---
 nautilus
