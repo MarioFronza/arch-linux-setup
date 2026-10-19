@@ -321,7 +321,6 @@ how to install them.
 | `ttf-ia-writer` | Subset of the fonts provided by iA Writer |
 | `ufw-docker` | To fix the Docker and UFW security flaw without disabling iptables. |
 | `tzupdate` | Set the system timezone based on IP geolocation |
-| `yaru-icon-theme` | Yaru default ubuntu icon theme |
 
 ### Android / mobile RE
 
@@ -337,4 +336,3 @@ how to install them.
 | `burpsuite` | An integrated platform for performing security testing of web applications (free edition) |
 | `dex2jar` | Tools to work with android .dex and java .class files. ThexXTURBOXx's fork. |
 | `python-frida-bin` | Inject JavaScript to explore native apps on Windows, Mac, Linux, iOS and Android. Python 3 binary version from PyPi |
-| `frida-tools` | CLI tools for Frida |

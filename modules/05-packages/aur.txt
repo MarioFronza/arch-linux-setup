@@ -21,7 +21,6 @@ tensaku-bin
 ttf-ia-writer
 ufw-docker
 tzupdate
-yaru-icon-theme
 
 # --- Android / mobile RE ---
 android-apktool-bin
@@ -32,6 +31,5 @@ burpsuite
 dex2jar
 # python-frida-bin: prebuilt PyPI wheel, not python-frida — the source
 # build compiles V8 from scratch (single-threaded, 30-90+ min, prone to
-# failing on 15GB RAM). Provides python-frida, satisfies frida-tools' dep.
+# failing on 15GB RAM). Provides python-frida.
 python-frida-bin
-frida-tools
