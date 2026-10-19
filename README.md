@@ -37,6 +37,78 @@ config on the machine edits the clone. Commit and push from `~/dotfiles`.
 Claude Code's `settings.json` and btop's `btop.conf` are the exceptions:
 they are copied once, because their apps rewrite them at runtime.
 
+## After installing
+
+What is left is interactive or account-bound, so `install.sh` stops short of
+it. Do it in this order, after the reboot.
+
+### 1. Network, bluetooth and the tailscale daemon
+
+These take the network down, so run them from the machine's own console,
+not over SSH:
+
+```bash
+bash ~/.local/share/arch-linux-setup/modules/05-packages/enable-services.sh
+impala    # join a wifi network (bluetui for bluetooth)
+```
+
+### 2. Git identity
+
+Fill in your name and email in `~/.config/git/identity`. `signingkey` already
+points at the SSH key generated next.
+
+### 3. SSH key
+
+```bash
+ssh-keygen -t ed25519 -C "you@example.com" -f ~/.ssh/id_ed25519
+```
+
+### 4. GitHub CLI and the key on GitHub
+
+Log in, picking `GitHub.com`, `SSH` as the protocol, skipping the key upload
+it offers, and authenticating in the browser:
+
+```bash
+gh auth login
+gh auth refresh -h github.com -s admin:public_key,admin:ssh_signing_key
+```
+
+Add the key twice, once to push and once to sign commits:
+
+```bash
+gh ssh-key add ~/.ssh/id_ed25519.pub --type authentication --title "$(hostname)"
+gh ssh-key add ~/.ssh/id_ed25519.pub --type signing --title "$(hostname)"
+```
+
+Let git verify your own signatures locally, and switch the dotfiles clone to
+SSH so you can push from it:
+
+```bash
+printf '%s namespaces="git" %s\n' \
+  "$(git config user.email)" "$(cut -d' ' -f1,2 ~/.ssh/id_ed25519.pub)" \
+  > ~/.config/git/allowed_signers
+git -C ~/dotfiles remote set-url origin git@github.com:MarioFronza/dotfiles.git
+```
+
+Check it:
+
+```bash
+ssh -T git@github.com              # "Hi <user>! You've successfully authenticated"
+git -C ~/dotfiles log --show-signature -1
+```
+
+### 5. Tailscale
+
+```bash
+sudo tailscale up                       # prints a URL, open it to add the machine
+sudo tailscale set --operator="$USER"   # run tailscale without sudo from now on
+tailscale status
+```
+
+### 6. Claude Code
+
+Run `/theme` inside Claude Code and pick `tokyo_night`.
+
 ## Migrating a configured machine
 
 A machine set up before the switch to stow has real files where the
@@ -65,5 +137,5 @@ it to dotfiles.
 - Enabling network/bluetooth services — run
   `modules/05-packages/enable-services.sh` from the machine's own console,
   since it takes the network down.
-- Anything account-bound: SSH keys, `gh auth login`. `install.sh` prints
-  what is left when it finishes.
+- Anything account-bound: SSH keys, `gh auth login`, tailscale. See
+  [After installing](#after-installing).
