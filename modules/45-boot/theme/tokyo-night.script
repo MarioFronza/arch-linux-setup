@@ -13,12 +13,58 @@ bullet.sprites = [];
 bullet.gap = 6;
 bullet.max = Math.Int((entry.image.GetWidth() - 32) / (bullet.image.GetWidth() + bullet.gap));
 
+box.image = Image("progress_box.png");
+box.sprite = Sprite(box.image);
+box.x = Window.GetWidth() / 2 - box.image.GetWidth() / 2;
+box.y = Window.GetHeight() / 2 - box.image.GetHeight() / 2;
+box.sprite.SetPosition(box.x, box.y, 1);
+box.sprite.SetOpacity(0);
+
+bar.image = Image("progress_bar.png");
+bar.sprite = Sprite();
+bar.sprite.SetPosition(box.x, box.y, 2);
+
+progress.asked = 0;
+progress.shown = 0;
+progress.value = 0;
+progress.frame = 0;
+progress.fake_limit = 0.7;
+progress.fake_seconds = 15;
+
+fun set_progress(value) {
+  if (value <= progress.value)
+    return;
+  progress.value = value;
+  width = Math.Int(bar.image.GetWidth() * value);
+  if (width < 1)
+    width = 1;
+  bar.sprite.SetImage(bar.image.Scale(width, bar.image.GetHeight()));
+}
+
+fun refresh_callback() {
+  if (!progress.shown)
+    return;
+  progress.frame++;
+  ratio = progress.frame / 50 / progress.fake_seconds;
+  if (ratio > 1)
+    ratio = 1;
+  set_progress((1 - (1 - ratio) * (1 - ratio)) * progress.fake_limit);
+}
+
+fun boot_progress_callback(duration, value) {
+  if (progress.shown)
+    set_progress(value);
+}
+
 fun hide_bullets() {
   for (i = 0; bullet.sprites[i]; i++)
     bullet.sprites[i].SetOpacity(0);
 }
 
 fun display_password_callback(prompt, bullets) {
+  progress.asked = 1;
+  box.sprite.SetOpacity(0);
+  bar.sprite.SetOpacity(0);
   entry.sprite.SetOpacity(1);
   hide_bullets();
 
@@ -41,7 +87,14 @@ fun display_password_callback(prompt, bullets) {
 fun display_normal_callback() {
   entry.sprite.SetOpacity(0);
   hide_bullets();
+  if (progress.asked && !progress.shown) {
+    progress.shown = 1;
+    box.sprite.SetOpacity(1);
+    bar.sprite.SetOpacity(1);
+  }
 }
 
 Plymouth.SetDisplayPasswordFunction(display_password_callback);
 Plymouth.SetDisplayNormalFunction(display_normal_callback);
+Plymouth.SetRefreshFunction(refresh_callback);
+Plymouth.SetBootProgressFunction(boot_progress_callback);
