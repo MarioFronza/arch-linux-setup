@@ -109,11 +109,11 @@ tailscale status
 
 Run `/theme` inside Claude Code and pick `tokyo_night`.
 
-## What it deliberately does not do
+Disk partitioning, encryption and the bootloader stay with `archinstall`,
+see [`QUICKSTART.md`](QUICKSTART.md).
 
-- Disk partitioning, encryption, bootloader — `archinstall` stays manual.
-- Enabling network/bluetooth services — run
-  `modules/05-packages/enable-services.sh` from the machine's own console,
-  since it takes the network down.
-- Anything account-bound: SSH keys, `gh auth login`, tailscale. See
-  [After installing](#after-installing).
+If the install fails, fix the cause and re-run it. It is safe to run twice:
+
+```bash
+bash ~/.local/share/arch-linux-setup/install.sh
+```

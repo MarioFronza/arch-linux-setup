@@ -40,8 +40,8 @@ archinstall
 
 Leave the profile and audio sections alone on purpose. Every desktop
 profile drags in a compositor, a launcher and a terminal of its own
-choosing, and arch-linux-setup installs its own set — see
-[`modules/05-packages/pacman.txt`](modules/05-packages/pacman.txt). Picking
+choosing, and arch-linux-setup installs its own set (see
+[`modules/05-packages/pacman.txt`](modules/05-packages/pacman.txt)). Picking
 one only means uninstalling the parts you don't want afterwards.
 
 Reboot, log in as the user you created.
@@ -77,24 +77,8 @@ curl -fsSL https://raw.githubusercontent.com/MarioFronza/arch-linux-setup/main/b
 See [`README.md`](README.md) for what this installs and what it
 deliberately leaves manual.
 
-## 6. Enable wifi and bluetooth
+## 6. Finish by hand
 
-`iwd`, `systemd-networkd`, `systemd-resolved`, `bluetooth` and
-`tailscaled` are installed by now, but none of them are enabled — you're
-still on whatever wired/SSH connection you set up in step 4.
-
-Go back to the machine's own console for this part, because enabling them
-takes that connection down:
-
-```bash
-cd ~/.local/share/arch-linux-setup/modules/05-packages
-./enable-services.sh
-```
-
-Then `impala` to join a wifi network, and `sudo tailscale up` if you want
-this machine on the tailnet.
-
-## 7. Finish the account-bound bits
-
-Follow [After installing](README.md#after-installing) in the README: git
-identity, SSH key, GitHub CLI, tailscale and the Claude Code theme.
+Follow [After installing](README.md#after-installing) in the README:
+network services, git identity, SSH key, GitHub CLI, tailscale and the
+Claude Code theme.
