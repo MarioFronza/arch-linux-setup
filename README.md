@@ -30,7 +30,7 @@ directory. They are numbered in dependency order, in steps of 5.
 | `30-git` | seeds `~/.config/git/identity` from the dotfiles template |
 | `35-pipx` | installs frida-tools from PyPI |
 | `40-mise` | installs language/tool versions |
-| `45-boot` | Plymouth password screen, silent boot, autologin on tty1 (the disk password is the only prompt) |
+| `45-boot` | Plymouth password screen, silent boot, autologin on tty1 when the disk is encrypted (the disk password is then the only prompt) |
 | `50-default-apps` | Firefox as default browser, Alacritty as default terminal |
 
 Every file under `$HOME` comes from dotfiles as a symlink, so editing a

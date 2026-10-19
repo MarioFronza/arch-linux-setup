@@ -27,9 +27,14 @@ echo "==> Keeping the splash on screen until sway draws"
 sudo mkdir -p /etc/systemd/system/plymouth-quit.service.d
 sudo cp retain-splash.conf /etc/systemd/system/plymouth-quit.service.d/
 
-echo "==> Enabling autologin on tty1"
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sed "s/USER/$USER/" autologin.conf | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null
+# Without disk encryption, autologin would leave the machine with no password at all.
+if grep -qE 'cryptdevice=|rd\.luks\.' /proc/cmdline; then
+  echo "==> Enabling autologin on tty1"
+  sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+  sed "s/USER/$USER/" autologin.conf | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null
+else
+  echo "==> Skipping autologin (root is not encrypted)"
+fi
 
 echo "==> Rebuilding initramfs and boot entries"
 sudo limine-update

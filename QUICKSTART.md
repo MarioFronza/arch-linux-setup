@@ -28,7 +28,7 @@ archinstall
 | Mirrors and repositories | Select regions > your country |
 | Disk configuration | Partitioning > select disk > Use a best-effort default partition layout |
 | Disk > File system | btrfs (default subvolumes, use compression) |
-| Disk > Disk encryption | Encryption type: LUKS > set password > Partitions: select which one to encrypt (recommended, not required) |
+| Disk > Disk encryption | Encryption type: LUKS > set password > Partitions: select which one to encrypt (recommended: it is what enables autologin) |
 | Bootloader | Limine |
 | Hostname | whatever you want |
 | Authentication > Root password | set one |
