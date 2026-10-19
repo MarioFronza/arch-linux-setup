@@ -105,10 +105,6 @@ sudo tailscale set --operator="$USER"   # run tailscale without sudo from now on
 tailscale status
 ```
 
-### 6. Claude Code
-
-Run `/theme` inside Claude Code and pick `tokyo_night`.
-
 Disk partitioning, encryption and the bootloader stay with `archinstall`,
 see [`QUICKSTART.md`](QUICKSTART.md).
 

@@ -80,5 +80,4 @@ deliberately leaves manual.
 ## 6. Finish by hand
 
 Follow [After installing](README.md#after-installing) in the README:
-network services, git identity, SSH key, GitHub CLI, tailscale and the
-Claude Code theme.
+network services, git identity, SSH key, GitHub CLI and tailscale.
