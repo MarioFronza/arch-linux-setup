@@ -7,10 +7,7 @@ echo "==> Cloning dotfiles"
 
 echo "==> Stowing dotfiles"
 mapfile -t packages < <(find ~/dotfiles -maxdepth 1 -mindepth 1 -type d ! -name '.*' ! -name 'test' -printf '%f\n')
-stow --no-folding -d ~/dotfiles -t ~ "${packages[@]}" || {
-  echo "==> Files listed above are in the way. See \"Migrating a configured machine\" in ~/.local/share/arch-linux-setup/README.md" >&2
-  false
-}
+stow --no-folding -d ~/dotfiles -t ~ "${packages[@]}"
 
 echo "==> Copying configs that their apps rewrite at runtime"
 [[ -e ~/.claude/settings.json ]] || cp ~/dotfiles/claude/.claude/settings.json ~/.claude/settings.json

@@ -109,28 +109,6 @@ tailscale status
 
 Run `/theme` inside Claude Code and pick `tokyo_night`.
 
-## Migrating a configured machine
-
-A machine set up before the switch to stow has real files where the
-symlinks go, and stow refuses to replace them. Move them out of the way,
-then re-run:
-
-```bash
-backup=~/dotfiles-backup-$(date +%F)
-mkdir -p "$backup"
-cd ~/dotfiles
-for pkg in */; do
-  pkg=${pkg%/}; [[ $pkg == test ]] && continue
-  stow --no-folding -n -v -t ~ "$pkg" 2>&1 \
-    | sed -n 's/.* over existing target \(.*\) since .*/\1/p' \
-    | while read -r file; do mkdir -p "$backup/$(dirname "$file")"; mv ~/"$file" "$backup/$file"; done
-done
-bash ~/.local/share/arch-linux-setup/install.sh
-```
-
-Diff anything you changed locally against `$backup` afterwards and commit
-it to dotfiles.
-
 ## What it deliberately does not do
 
 - Disk partitioning, encryption, bootloader — `archinstall` stays manual.
