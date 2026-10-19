@@ -28,6 +28,7 @@ directory. They are numbered in dependency order, in steps of 5.
 | `20-zsh` | sets zsh as the login shell |
 | `25-tmux` | clones tpm |
 | `30-git` | seeds `~/.config/git/identity` from the dotfiles template |
+| `35-pipx` | installs frida-tools from PyPI |
 | `40-mise` | installs language/tool versions |
 
 Every file under `$HOME` comes from dotfiles as a symlink, so editing a

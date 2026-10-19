@@ -204,6 +204,7 @@ radare2
 jadx
 mitmproxy
 zaproxy
+python-pipx
 
 # --- Misc ---
 inotify-tools

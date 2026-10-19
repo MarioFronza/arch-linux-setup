@@ -259,6 +259,7 @@ how to install them.
 | `jadx` | Command line and GUI tools to produce Java source code from Android Dex and APK files |
 | `mitmproxy` | SSL-capable man-in-the-middle HTTP proxy |
 | `zaproxy` | Integrated penetration testing tool for finding vulnerabilities in web applications |
+| `python-pipx` | Install and Run Python Applications in Isolated Environments |
 
 ### Misc
 
