@@ -30,6 +30,7 @@ directory. They are numbered in dependency order, in steps of 5.
 | `30-git` | seeds `~/.config/git/identity` from the dotfiles template |
 | `35-pipx` | installs frida-tools from PyPI |
 | `40-mise` | installs language/tool versions |
+| `50-default-apps` | Firefox as default browser, Alacritty as default terminal |
 
 Every file under `$HOME` comes from dotfiles as a symlink, so editing a
 config on the machine edits the clone. Commit and push from `~/dotfiles`.
