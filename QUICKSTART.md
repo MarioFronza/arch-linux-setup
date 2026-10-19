@@ -96,9 +96,5 @@ this machine on the tailnet.
 
 ## 7. Finish the account-bound bits
 
-`install.sh` prints these at the end, with the exact commands:
-
-- edit `~/.config/git/identity`, generate an SSH key, add it to GitHub under
-  both Authentication and Signing, write `~/.config/git/allowed_signers`
-- `gh auth login`, picking SSH as the protocol
-- `/theme` inside Claude Code to pick `tokyo_night`
+Follow [After installing](README.md#after-installing) in the README: git
+identity, SSH key, GitHub CLI, tailscale and the Claude Code theme.
