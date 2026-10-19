@@ -1,6 +1,6 @@
 # arch-linux-setup
 
-Arch installer: fresh `archinstall` to configured desktop, one command. Config
+Arch installer, Arch only: fresh `archinstall` to configured desktop, one command. Config
 under `$HOME` comes from [dotfiles](https://github.com/MarioFronza/dotfiles)
 via GNU Stow.
 
