@@ -20,7 +20,7 @@ curl .../boot.sh | bash
   boot.sh     install git, clone arch-linux-setup to ~/.local/share/arch-linux-setup
   install.sh  run modules/*/install.sh in order
     packages  pacman + AUR + GPU (lspci) + multilib + stow
-    system    udev (laptop only), /etc files, chsh
+    system    udev (laptop only), /etc files, chsh, plymouth + autologin
     dotfiles  clone dotfiles to ~/dotfiles, stow --no-folding the package set
   point at README "After installing", offer reboot
 ```

@@ -1,0 +1,50 @@
+# Only the disk password field on the Tokyo Night background. No logo, no
+# progress bar, and boot messages stay hidden.
+
+Window.SetBackgroundTopColor(0.102, 0.106, 0.149);
+Window.SetBackgroundBottomColor(0.102, 0.106, 0.149);
+
+entry.image = Image("entry.png");
+entry.sprite = Sprite(entry.image);
+entry.x = Window.GetWidth() / 2 - entry.image.GetWidth() / 2;
+entry.y = Window.GetHeight() / 2 - entry.image.GetHeight() / 2;
+entry.sprite.SetPosition(entry.x, entry.y, 1);
+entry.sprite.SetOpacity(0);
+
+bullet.image = Image("bullet.png");
+bullet.sprites = [];
+bullet.gap = 6;
+bullet.max = Math.Int((entry.image.GetWidth() - 32) / (bullet.image.GetWidth() + bullet.gap));
+
+fun hide_bullets() {
+  for (i = 0; bullet.sprites[i]; i++)
+    bullet.sprites[i].SetOpacity(0);
+}
+
+fun display_password_callback(prompt, bullets) {
+  entry.sprite.SetOpacity(1);
+  hide_bullets();
+
+  count = bullets;
+  if (count > bullet.max)
+    count = bullet.max;
+
+  for (i = 0; i < count; i++) {
+    if (!bullet.sprites[i]) {
+      bullet.sprites[i] = Sprite(bullet.image);
+      bullet.sprites[i].SetPosition(
+        entry.x + 16 + i * (bullet.image.GetWidth() + bullet.gap),
+        entry.y + entry.image.GetHeight() / 2 - bullet.image.GetHeight() / 2,
+        2);
+    }
+    bullet.sprites[i].SetOpacity(1);
+  }
+}
+
+fun display_normal_callback() {
+  entry.sprite.SetOpacity(0);
+  hide_bullets();
+}
+
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
