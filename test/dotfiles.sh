@@ -21,7 +21,7 @@ if [[ "$target" != "$HOME/dotfiles/"* ]]; then
   exit 1
 fi
 
-PACKAGES=(alacritty claude fuzzel git github mako mise nvim sway swaylock swayosd tmux waybar zsh)
+PACKAGES=(alacritty btop claude fuzzel git github gtk mako mise nvim sway swaylock swayosd tmux waybar zsh)
 failures=0
 
 for pkg in "${PACKAGES[@]}"; do
@@ -38,6 +38,11 @@ fi
 
 if [[ ! -f "$HOME/.claude/settings.json" || -L "$HOME/.claude/settings.json" ]]; then
   echo "FAIL: ~/.claude/settings.json must exist as a regular file, not a symlink"
+  exit 1
+fi
+
+if [[ ! -f "$HOME/.config/btop/btop.conf" || -L "$HOME/.config/btop/btop.conf" ]]; then
+  echo "FAIL: ~/.config/btop/btop.conf must exist as a regular file, not a symlink"
   exit 1
 fi
 

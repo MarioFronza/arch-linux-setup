@@ -33,8 +33,8 @@ directory. They are numbered in dependency order, in steps of 5.
 
 Every file under `$HOME` comes from dotfiles as a symlink, so editing a
 config on the machine edits the clone. Commit and push from `~/dotfiles`.
-Claude Code's `settings.json` is the one exception: it is copied once,
-because Claude Code rewrites it at runtime.
+Claude Code's `settings.json` and btop's `btop.conf` are the exceptions:
+they are copied once, because their apps rewrite them at runtime.
 
 ## Migrating a configured machine
 

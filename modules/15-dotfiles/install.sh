@@ -12,6 +12,6 @@ stow --no-folding -d ~/dotfiles -t ~ "${packages[@]}" || {
   false
 }
 
-echo "==> Copying claude settings"
-# Claude Code rewrites this file at runtime, so only seed it once.
+echo "==> Copying configs that their apps rewrite at runtime"
 [[ -e ~/.claude/settings.json ]] || cp ~/dotfiles/claude/.claude/settings.json ~/.claude/settings.json
+[[ -e ~/.config/btop/btop.conf ]] || cp ~/dotfiles/btop/.config/btop/btop.conf ~/.config/btop/btop.conf
