@@ -1,6 +1,3 @@
-# Only the disk password field on the Tokyo Night background. No logo, no
-# progress bar, and boot messages stay hidden.
-
 Window.SetBackgroundTopColor(0.102, 0.106, 0.149);
 Window.SetBackgroundBottomColor(0.102, 0.106, 0.149);
 
