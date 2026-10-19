@@ -23,6 +23,10 @@ else
     sudo sed -i "s/\$/ $quiet_flags/" /etc/kernel/cmdline
 fi
 
+echo "==> Keeping the splash on screen until sway draws"
+sudo mkdir -p /etc/systemd/system/plymouth-quit.service.d
+sudo cp retain-splash.conf /etc/systemd/system/plymouth-quit.service.d/
+
 echo "==> Enabling autologin on tty1"
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
 sed "s/USER/$USER/" autologin.conf | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null
