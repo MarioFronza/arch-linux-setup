@@ -30,19 +30,11 @@ archinstall
 | Disk > File system | btrfs (default subvolumes, use compression) |
 | Disk > Disk encryption | Encryption type: LUKS > set password > Partitions: select which one to encrypt (recommended: it is what enables autologin) |
 | Bootloader | Limine |
-| Hostname | whatever you want |
-| Authentication > Root password | set one |
 | Authentication > User account | add yourself, Superuser: yes |
-| Profile | leave empty |
-| Applications > Audio | no audio server |
 | Network configuration | copy ISO network config |
 | Timezone | yours |
 
-Leave the profile and audio sections alone on purpose. Every desktop
-profile drags in a compositor, a launcher and a terminal of its own
-choosing, and arch-linux-setup installs its own set (see
-[`modules/05-packages/pacman.txt`](modules/05-packages/pacman.txt)). Picking
-one only means uninstalling the parts you don't want afterwards.
+Anything not listed keeps its default.
 
 Reboot, log in as the user you created.
 
