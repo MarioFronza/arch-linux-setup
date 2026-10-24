@@ -27,7 +27,7 @@ directory. They are numbered in dependency order, in steps of 5.
 | `15-dotfiles` | clones [dotfiles](https://github.com/MarioFronza/dotfiles) to `~/dotfiles` and stows every package into `$HOME` |
 | `20-zsh` | sets zsh as the login shell |
 | `25-tmux` | clones tpm |
-| `30-git` | seeds `~/.config/git/identity` from the dotfiles template |
+| `30-git` | seeds `~/.config/git/identity` with the name and email asked at the start |
 | `35-pipx` | installs frida-tools from PyPI |
 | `40-mise` | installs language/tool versions |
 | `45-boot` | Plymouth password screen, silent boot, autologin on tty1 when the disk is encrypted (the disk password is then the only prompt) |
@@ -54,18 +54,15 @@ bash ~/.local/share/arch-linux-setup/modules/05-packages/enable-services.sh
 impala    # join a wifi network (bluetui for bluetooth)
 ```
 
-### 2. Git identity
+### 2. SSH key
 
-Fill in your name and email in `~/.config/git/identity`. `signingkey` already
-points at the SSH key generated next.
-
-### 3. SSH key
+`signingkey` in `~/.config/git/identity` already points at this key:
 
 ```bash
-ssh-keygen -t ed25519 -C "you@example.com" -f ~/.ssh/id_ed25519
+ssh-keygen -t ed25519 -C "$(git config user.email)" -f ~/.ssh/id_ed25519
 ```
 
-### 4. GitHub CLI and the key on GitHub
+### 3. GitHub CLI and the key on GitHub
 
 Log in, picking `GitHub.com`, `SSH` as the protocol, skipping the key upload
 it offers, and authenticating in the browser:
@@ -99,7 +96,7 @@ ssh -T git@github.com              # "Hi <user>! You've successfully authenticat
 git -C ~/dotfiles log --show-signature -1
 ```
 
-### 5. Tailscale
+### 4. Tailscale
 
 ```bash
 sudo tailscale up                       # prints a URL, open it to add the machine

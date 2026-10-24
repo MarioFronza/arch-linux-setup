@@ -32,6 +32,9 @@ curl .../boot.sh | bash
 - Tests: `bash test/dotfiles.sh` and `bash test/modules.sh`, against the
   sibling `../dotfiles` clone (override with `DOTFILES_REPO`).
 - Hardware-agnostic: detect, never ask. Skip silently what doesn't apply.
+  The one exception is the git name and email, asked once at the start of
+  `install.sh` (skipped when `GIT_NAME`/`GIT_EMAIL` are set or the identity
+  file exists).
 - Re-runnable: running `install.sh` twice is safe (`--needed`, stow skips
   existing links, clones and seeds are guarded).
 - Out of scope: partitioning, encryption, bootloader (archinstall), enabling

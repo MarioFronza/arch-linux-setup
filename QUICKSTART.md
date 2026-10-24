@@ -66,10 +66,11 @@ packages, GPU driver, every module's config):
 curl -fsSL https://raw.githubusercontent.com/MarioFronza/arch-linux-setup/main/boot.sh | bash
 ```
 
+It asks for your git name and email first, then runs unattended.
 See [`README.md`](README.md) for what this installs and what it
 deliberately leaves manual.
 
 ## 6. Finish by hand
 
 Follow [After installing](README.md#after-installing) in the README:
-network services, git identity, SSH key, GitHub CLI and tailscale.
+network services, SSH key, GitHub CLI and tailscale.
