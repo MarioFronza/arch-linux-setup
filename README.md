@@ -33,6 +33,7 @@ directory. They are numbered in dependency order, in steps of 5.
 | `45-boot` | Plymouth password screen, silent boot, autologin on tty1 when the disk is encrypted (the disk password is then the only prompt) |
 | `50-default-apps` | Firefox as default browser, Alacritty as default terminal |
 | `55-power-profile` | performance power profile on machines without a battery |
+| `60-docker` | starts docker on boot and lets your user run it without sudo |
 
 Every file under `$HOME` comes from dotfiles as a symlink, so editing a
 config on the machine edits the clone. Commit and push from `~/dotfiles`.
