@@ -12,8 +12,6 @@ while true; do sudo -n true; sleep 50; done 2>/dev/null &
 sudo_keepalive=$!
 trap 'kill "$sudo_keepalive" 2>/dev/null' EXIT
 
-# The only question of the run, asked up front so the rest goes unattended.
-# Reads /dev/tty because under curl | bash stdin is the script itself.
 if [[ ! -f ~/.config/git/identity && -z "${GIT_NAME:-}${GIT_EMAIL:-}" ]]; then
   read -rp "Git name: " GIT_NAME </dev/tty
   read -rp "Git email: " GIT_EMAIL </dev/tty
