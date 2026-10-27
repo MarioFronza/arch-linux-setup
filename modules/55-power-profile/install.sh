@@ -1,8 +1,5 @@
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-echo "==> Enabling power-profiles-daemon"
-sudo systemctl enable --now power-profiles-daemon
-
 if compgen -G "/sys/class/power_supply/BAT*" >/dev/null; then
   echo "==> Keeping the default power profile (battery detected)"
 elif PATH="/usr/bin:$PATH" powerprofilesctl list | grep -q 'performance:'; then
