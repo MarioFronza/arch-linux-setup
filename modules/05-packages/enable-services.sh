@@ -15,6 +15,11 @@ if [[ -n "${SSH_CONNECTION:-}" ]]; then
   [[ $reply == [yY] ]] || exit 1
 fi
 
+echo "==> Letting any one link bring the network online"
+sudo install -Dm644 "$(dirname "${BASH_SOURCE[0]}")/wait-online-any.conf" \
+  /etc/systemd/system/systemd-networkd-wait-online.service.d/any.conf
+sudo systemctl daemon-reload
+
 for service in "${services[@]}"; do
   echo "==> Enabling $service"
   sudo systemctl enable --now "$service"
