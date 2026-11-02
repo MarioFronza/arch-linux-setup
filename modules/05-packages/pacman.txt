@@ -188,6 +188,10 @@ tesseract-data-eng
 # --- Browsers ---
 firefox
 
+# --- Chat / downloads ---
+discord
+qbittorrent
+
 # --- Virtualization / gaming ---
 virtualbox
 qemu-user-static-binfmt

@@ -234,6 +234,13 @@ how to install them.
 |---|---|
 | `firefox` | Fast, Private & Safe Web Browser |
 
+### Chat / downloads
+
+| Package | Description |
+|---|---|
+| `discord` | All-in-one voice and text chat for gamers |
+| `qbittorrent` | An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar |
+
 ### Virtualization / gaming
 
 | Package | Description |
