@@ -105,6 +105,8 @@ how to install them.
 | `xorg-xwayland` | run X clients under wayland |
 | `brightnessctl` | Lightweight brightness control tool |
 | `grim` | Screenshot utility for Wayland |
+| `slurp` | Select a region in a Wayland compositor |
+| `satty` | Modern screenshot annotation tool, inspired by Swappy and Flameshot |
 | `xdg-desktop-portal-gtk` | A backend implementation for xdg-desktop-portal using GTK |
 | `xdg-desktop-portal-wlr` | xdg-desktop-portal backend for wlroots |
 | `polkit` | Application development toolkit for controlling system-wide privileges |

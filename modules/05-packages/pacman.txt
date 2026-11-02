@@ -78,6 +78,8 @@ waybar
 xorg-xwayland # X11 apps under sway: steam, virtualbox, ghidra, burpsuite
 brightnessctl # sway's brightness backend, driven through swayosd-client
 grim          # screenshots, bound to Print in ../sway/config
+slurp
+satty
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 polkit
